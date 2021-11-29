@@ -33,10 +33,51 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "copyright": "Copyright Great Idea! 2021",
   },
   "images": {
-    "logo-img": "http://localhost:9000/img/logo.png",
-    "cta-img": "http://localhost:9000/img/cta.png",
-    "accent-img": "http://localhost:9000/img/accent.png",
+    "logo-img": "mocks/img/logo.png",
+    "cta-img": "mocks/img/cta.png",
+    "accent-img": "mocks/img/accent.png",
   },
 };
 
 console.log('project wired!')
+
+//nav links
+const links = document.querySelectorAll('nav a');
+const linksRealArray = Array.from(links);
+const linkTexts = Object.values(siteContent.nav);
+links.forEach((link, index) => {
+  link.textContent = linkTexts[index];
+});
+
+//logo
+const logoImg = document.querySelector('#logo-img');
+console.log(logoImg);
+logoImg.src = siteContent.images['logo-img'];
+
+//CTA
+
+
+//Main content
+//H4
+const topContent = document.querySelectorAll('.text-content h4');
+const topTitles = Array.from(topContent);
+
+topTitles[0].textContent = siteContent['main-content']['features-h4'];
+topTitles[1].textContent = siteContent['main-content']['about-h4'];
+topTitles[2].textContent = siteContent['main-content']['services-h4'];
+topTitles[3].textContent = siteContent['main-content']['product-h4'];
+topTitles[4].textContent = siteContent['main-content']['vision-h4'];
+
+//text
+const topParas = document.querySelectorAll('.text-content p');
+const topText = Array.from(topParas);
+
+topText[0].textContent = siteContent['main-content']['features-content'];
+topText[1].textContent = siteContent['main-content']['about-content'];
+topText[2].textContent = siteContent['main-content']['services-content'];
+topText[3].textContent = siteContent['main-content']['product-content'];
+topText[4].textContent = siteContent['main-content']['vision-content'];
+
+//middle image
+const middleImg = document.querySelector('#accent-img');
+middleImg.src = siteContent.images['accent-img'];
