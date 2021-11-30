@@ -51,11 +51,17 @@ links.forEach((link, index) => {
 
 //logo
 const logoImg = document.querySelector('#logo-img');
-console.log(logoImg);
 logoImg.src = siteContent.images['logo-img'];
 
 //CTA
+const title = document.querySelector('h1');
+title.textContent = siteContent['cta']['h1'];
 
+const button = document.querySelector('.cta button');
+button.textContent = siteContent['cta']['button'];
+
+const codeImg = document.querySelector('#cta-img');
+codeImg.src = siteContent.images['cta-img'];
 
 //Main content
 //H4
@@ -79,5 +85,24 @@ topText[3].textContent = siteContent['main-content']['product-content'];
 topText[4].textContent = siteContent['main-content']['vision-content'];
 
 //middle image
-const middleImg = document.querySelector('#accent-img');
-middleImg.src = siteContent.images['accent-img'];
+const middleImg = document.querySelector('.main-content img');
+middleImg.src = siteContent['images']['accent-img'];
+
+//contact
+const contactH4 = document.querySelectorAll('.contact h4');
+const contactHeading = Array.from(contactH4);
+
+contactHeading[0].textContent = siteContent['contact']['contact-h4'];
+
+const contactParas = document.querySelectorAll('.contact p');
+const parasArray = Array.from(contactParas);
+
+contactParas[0].textContent = siteContent['contact']['address'];
+contactParas[1].textContent = siteContent['contact']['phone'];
+contactParas[2].textContent = siteContent['contact']['email'];
+
+//footer
+const footerContent = document.querySelectorAll('footer a');
+const footerArray = Array.from(footerContent);
+
+footerArray[0].textContent = siteContent['footer']['copyright'];
